@@ -10,6 +10,8 @@
 
 @interface YHRoundBorderedButton()
 
+@property (nonatomic, strong) UIColor *borderColor;
+
 @end
 
 @implementation YHRoundBorderedButton
@@ -64,8 +66,15 @@
 
 - (void)setTintColor:(UIColor *)tintColor
 {
+    [self setTintColor:tintColor borderColor:tintColor];
+}
+
+- (void)setTintColor:(UIColor *)tintColor borderColor:(UIColor *)borderColor
+{
     [super setTintColor:tintColor];
     [self setTitleColor:tintColor forState:UIControlStateNormal];
+    self.borderColor = borderColor;
+
     [self refreshBorderColor];
 }
 
@@ -78,7 +87,7 @@
 
 - (void)refreshBorderColor
 {
-    self.layer.borderColor = [self isEnabled] ? self.tintColor.CGColor : [UIColor grayColor].CGColor;
+    self.layer.borderColor = [self isEnabled] ? self.borderColor.CGColor : [UIColor grayColor].CGColor;
 }
 
 - (void)setHighlighted:(BOOL)highlighted
