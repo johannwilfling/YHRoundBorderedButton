@@ -143,4 +143,10 @@
     }
 }
 
+- (void)setCustomFont:(UIFont *)customFont
+{
+    self.titleLabel.font = customFont;
+}
+
+
 @end
