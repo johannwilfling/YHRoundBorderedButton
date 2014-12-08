@@ -13,4 +13,10 @@
 /// Whether the plus icon is visible on the button.
 @property (nonatomic, getter = isPlusIconVisible) BOOL plusIconVisible;
 
+// set a custom font for the button
+- (void)setCustomFont:(UIFont *)customFont;
+
+// set a custom tinit color for the border
+- (void)setTintColor:(UIColor *)tintColor borderColor:(UIColor *)borderColor;
+
 @end
